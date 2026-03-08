@@ -1,1 +1,11 @@
-@import "tailwindcss"
+body {
+    color: #1F2937;
+}
+
+.text-gray {
+    color: #64748B;
+}
+
+.text-purple {
+    color: #4A00FF
+}
