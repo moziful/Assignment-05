@@ -5,7 +5,7 @@ document.getElementById("signInButton").addEventListener("click", ()=>{
         console.log("Correct Username & Password");
         document.getElementById("signInContainer").classList.add("hidden");
         document.getElementById("loader").classList.remove("hidden");
-        window.location.href = "./issues.html";
+        window.location.assign("./issues.html");
     } else {
         alert("Wrong Credentials!");
         return;
