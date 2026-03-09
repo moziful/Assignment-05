@@ -40,7 +40,7 @@ function loadIssues(status) {
         const issueElement = document.createElement("div");
         issueElement.classList.add("border-t-4", issue.status === "open" ? "border-green-500" : "border-purple-500", "w-full", "shadow-lg", "rounded-md");
         issueElement.innerHTML = `
-            <div class="p-3 bg-white w-full shadow rounded-t-sm">
+            <div onclick="fetchModalIssues(${issue.id})" class="p-3 bg-white w-full shadow rounded-t-sm">
                 <!-- Details -->
                 <div class="flex flex-col gap-3">
                     <!-- Status + Priority -->
@@ -86,12 +86,6 @@ class="w-20 ${issue.priority.toUpperCase() === "HIGH"
         issuesContainer.appendChild(issueElement);
     });
     document.getElementById("numberOfIssues").innerText = displayIssues.length;
-    // for (const label of issues.label[1]) {
-    //     const labelElement = document.createElement("div");
-    //     labelElement.classList.add("min-w-28", "p-1", "bg-orange-200", "flex", "gap-1", "justify-center", "text-xs", "text-orange-500", "font-medium", "items-center", "rounded-full", "border-2", "border-orange-300");
-    //     labelElement.innerText = label.toUpperCase();
-    //     document.getElementById("labelsContainer").appendChild(labelElement);
-    // }
 }
 
 allCatagoryButton.addEventListener("click", () => {

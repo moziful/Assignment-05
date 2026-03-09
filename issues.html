@@ -127,22 +127,42 @@
     </main>
 
     <!-- Open the modal using ID.showModal() method -->
-    <!-- <button class="btn" onclick="">open modal</button> -->
+    <!-- <button class="btn" onclick="my_modal_1.showModal()">open modal</button> -->
+
+
+
+
 
     <dialog id="my_modal_1" class="modal">
         <div class="modal-box">
-            <h3 class="text-lg font-bold">Hello!</h3>
-            <p class="py-4">Press ESC key or click the button below to close</p>
+
+            <h2 id="modalTitle" class="text-lg font-bold"></h2>
+
+            <p id="modalDescription" class="py-3"></p>
+
+            <div class="text-sm space-y-1">
+                <p><b>Status:</b> <span id="modalStatus"></span></p>
+                <p><b>Priority:</b> <span id="modalPriority"></span></p>
+                <p><b>Author:</b> <span id="modalAuthor"></span></p>
+                <p><b>Assignee:</b> <span id="modalAssignee"></span></p>
+                <p><b>Label:</b> <span id="modalLabel"></span></p>
+            </div>
+
             <div class="modal-action">
                 <form method="dialog">
-                    <!-- if there is a button in form, it will close the modal -->
                     <button class="btn">Close</button>
                 </form>
             </div>
+
         </div>
     </dialog>
 
+
+
+
+
     <script src="./issues.js"></script>
+    <script src="./modal.js"></script>
 </body>
 
 </html>
