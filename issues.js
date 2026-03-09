@@ -38,18 +38,23 @@ function loadIssues(status) {
     issuesContainer.innerHTML = "";
     displayIssues.forEach(issue => {
         const issueElement = document.createElement("div");
-        issueElement.classList.add("border-t-4", "border-green-500", "w-full", "shadow-lg", "rounded-md");
+        issueElement.classList.add("border-t-4", issue.status === "open" ? "border-green-500" : "border-purple-500", "w-full", "shadow-lg", "rounded-md");
         issueElement.innerHTML = `
             <div class="p-3 bg-white w-full shadow rounded-t-sm">
                 <!-- Details -->
                 <div class="flex flex-col gap-3">
                     <!-- Status + Priority -->
                     <div class="flex justify-between">
-                        <img class="w-6 h-6" src="./assets/Open-Status.png" alt="">
+                        <img class="w-6 h-6" src=${issue.status === "open" ? "./assets/Open-Status.png" : "./assets/Closed-Status.png"} alt="">
                             <div
-                                class="w-20 bg-red-200 flex justify-center text-xs text-red-500 font-medium items-center rounded-full">
-                                ${issue.priority.toUpperCase()}
-                            </div>
+class="w-20 ${issue.priority.toUpperCase() === "HIGH"
+                ? "bg-red-200 text-red-500"
+                : issue.priority.toUpperCase() === "MEDIUM"
+                    ? "bg-orange-200 text-orange-500"
+                    : "bg-gray-200 text-gray-500"
+            } flex justify-center text-xs font-medium items-center rounded-full">
+  ${issue.priority.toUpperCase()}
+</div>
                     </div>
                     <div class="flex flex-col gap-3">
                         <div class="flex flex-col gap-2">
@@ -57,14 +62,14 @@ function loadIssues(status) {
                             <p class="text-xs">${issue.description}
                             </p>
                         </div>
-                        <div class="flex gap-1">
+                        <div id="labelsContainer" class="flex gap-1">
                             <div
-                                class="min-w-14 p-1 bg-red-200 flex gap-1 justify-center text-xs text-red-500 font-medium items-center rounded-full border-2 border-red-300">
+                                class="min-w-14 p-1 bg-red-200 flex gap-1 justify-center text-[10px] text-red-500 font-medium items-center rounded-full border-2 border-red-300">
                                 <i class="fa-solid fa-bug"></i>
                                 ${issue.labels[0].toUpperCase()}
                             </div>
                             <div
-                                class="min-w-28 p-1 bg-orange-200 flex gap-1 justify-center text-xs text-orange-500 font-medium items-center rounded-full border-2 border-orange-300">
+                                class="min-w-28 p-1 bg-orange-200 flex gap-1 justify-center text-[10px] text-orange-500 font-medium items-center rounded-full border-2 border-orange-300">
                                 ${issue.labels[1]?.toUpperCase() || ""}
                             </div >
                         </div >
@@ -80,6 +85,13 @@ function loadIssues(status) {
         `;
         issuesContainer.appendChild(issueElement);
     });
+    document.getElementById("numberOfIssues").innerText = displayIssues.length;
+    // for (const label of issues.label[1]) {
+    //     const labelElement = document.createElement("div");
+    //     labelElement.classList.add("min-w-28", "p-1", "bg-orange-200", "flex", "gap-1", "justify-center", "text-xs", "text-orange-500", "font-medium", "items-center", "rounded-full", "border-2", "border-orange-300");
+    //     labelElement.innerText = label.toUpperCase();
+    //     document.getElementById("labelsContainer").appendChild(labelElement);
+    // }
 }
 
 allCatagoryButton.addEventListener("click", () => {
