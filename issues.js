@@ -1,3 +1,4 @@
+let currentStatus = "all";
 let allIssues = [];
 async function fetchIssues() {
     const response = await fetch("https://phi-lab-server.vercel.app/api/v1/lab/issues");
@@ -15,6 +16,11 @@ const closedCatagoryButton = document.getElementById("closedCatagoryButton");
 
 const catagoryButtons = [allCatagoryButton, openCatagoryButton, closedCatagoryButton];
 
+const searchInput = document.getElementById("searchInput");
+searchInput.addEventListener("input", () => {
+    loadIssues();
+});
+
 function activeButton(clickedButton) {
     for (const button of catagoryButtons) {
         if (button !== clickedButton) {
@@ -26,16 +32,35 @@ function activeButton(clickedButton) {
     }
 }
 
-function loadIssues(status) {
-    let displayIssues;
-    if (status === "all") {
-        displayIssues = allIssues;
-    } else {
-        displayIssues = allIssues.filter(issue => issue.status === status);
+function loadIssues() {
+
+    const searchText = document
+        .getElementById("searchInput")
+        .value
+        .toLowerCase();
+
+    let displayIssues = allIssues;
+
+    // Filter by Status
+    if (currentStatus !== "all") {
+        displayIssues = displayIssues.filter(issue =>
+            issue.status === currentStatus
+        );
     }
-    console.log(displayIssues);
+    // Filter by Search
+    if (searchText !== "") {
+        displayIssues = displayIssues.filter(issue =>
+            issue.title.toLowerCase().includes(searchText) ||
+            issue.description.toLowerCase().includes(searchText) ||
+            issue.author.toLowerCase().includes(searchText) ||
+            issue.createdAt.toLowerCase().includes(searchText) ||
+            issue.labels.some(label => label.toLowerCase().includes(searchText))
+        );
+    }
+
     const issuesContainer = document.getElementById("issuesContainer");
     issuesContainer.innerHTML = "";
+
     displayIssues.forEach(issue => {
         const issueElement = document.createElement("div");
         issueElement.classList.add("border-t-4", issue.status === "open" ? "border-green-500" : "border-purple-500", "w-full", "shadow-lg", "rounded-md");
@@ -85,18 +110,24 @@ class="w-20 ${issue.priority.toUpperCase() === "HIGH"
         `;
         issuesContainer.appendChild(issueElement);
     });
+
     document.getElementById("numberOfIssues").innerText = displayIssues.length;
 }
 
 allCatagoryButton.addEventListener("click", () => {
     activeButton(allCatagoryButton);
-    loadIssues("all");
+    currentStatus = "all";
+    loadIssues();
 });
+
 openCatagoryButton.addEventListener("click", () => {
     activeButton(openCatagoryButton);
-    loadIssues("open");
+    currentStatus = "open";
+    loadIssues();
 });
+
 closedCatagoryButton.addEventListener("click", () => {
     activeButton(closedCatagoryButton);
-    loadIssues("closed");
+    currentStatus = "closed";
+    loadIssues();
 });
