@@ -89,14 +89,20 @@ class="w-20 ${issue.priority.toUpperCase() === "HIGH"
                         </div>
                         <div id="labelsContainer" class="flex gap-1">
                             <div
-                                class="p-1 px-2 bg-red-200 flex gap-1 justify-center text-[10px] text-red-500 font-medium items-center rounded-full border-2 border-red-300">
-                                <i class="fa-solid ${issue.labels[0] === "bug" ? "fa-bug" : issue.labels[0] === "enhancement" ? "fa-wand-magic-sparkles" : "fa-book"}"></i>
-                                ${issue.labels[0].toUpperCase()}
-                            </div>
-                            <div
-                                class="p-1 px-2 bg-orange-200 flex gap-1 justify-center text-[10px] text-orange-500 font-medium items-center rounded-full border-2 border-orange-300">
-                                ${issue.labels[1]?.toUpperCase() || ""}
-                            </div >
+    class="p-1 px-2 flex gap-1 justify-center text-[10px] font-medium items-center rounded-full border-2 
+    ${issue.labels[0] === 'enhancement' ? 'bg-green-200 text-green-500 border-green-300' :
+                issue.labels[0] === 'documentation' ? 'bg-purple-200 text-purple-500 border-purple-300' :
+                    'bg-red-200 text-red-500 border-red-300'}">
+    <i class="fa-solid 
+       ${issue.labels[0] === 'bug' ? 'fa-bug' : issue.labels[0] === 'enhancement' ? 'fa-wand-magic-sparkles' : 'fa-book'}">
+    </i>
+    ${issue.labels[0].toUpperCase()}
+</div>
+                            ${issue.labels[1] ? `
+<div
+    class="p-1 px-2 bg-orange-200 flex gap-1 justify-center text-[10px] text-orange-500 font-medium items-center rounded-full border-2 border-orange-300">
+    ${issue.labels[1].toUpperCase()}
+</div>` : ''}
                         </div >
                     </div >
                 </div >
