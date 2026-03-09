@@ -128,13 +128,24 @@
 
 
 
-    <!-- 
-Parent div niye oita full screen, oitar reference e eita center
-    <div
-        class="top-10 left-10 absolute w-3/4 h-150 z-100 border-2 bg-blue-300 mx-auto rounded-lg flex flex-col justify-center items-center gap-4">
 
-    </div> -->
+    <div class="top-0 left-0 absolute w-full h-screen z-100 bg-[#00000080] flex flex-col justify-center items-center">
+        <div class="p-8 w-120 md:w-175 h-102 bg-white rounded-md flex justify-center items-center">
+            <div class="flex flex-col gap-4">
+                <p id="modalTitle" class="text-lg font-semibold"></p>
+                <p id="modalDescription"></p>
+                <p id="modalAuthor"></p>
+                <p id="modalAssignee"></p>
+                <p id="modalCreatedAt"></p>
+                <p id="modalStatus"></p>
+                <p id="modalPriority"></p>
+                <p id="modalLabels"></p>
+            </div>
+        </div>
+
+    </div>
     <script src="./issues.js"></script>
+    <script src="./modal.js"></script>
 </body>
 
 </html>

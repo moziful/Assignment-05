@@ -64,12 +64,12 @@ class="w-20 ${issue.priority.toUpperCase() === "HIGH"
                         </div>
                         <div id="labelsContainer" class="flex gap-1">
                             <div
-                                class="min-w-14 p-1 bg-red-200 flex gap-1 justify-center text-[10px] text-red-500 font-medium items-center rounded-full border-2 border-red-300">
-                                <i class="fa-solid fa-bug"></i>
+                                class="p-1 px-2 bg-red-200 flex gap-1 justify-center text-[10px] text-red-500 font-medium items-center rounded-full border-2 border-red-300">
+                                <i class="fa-solid ${issue.labels[0] === "bug" ? "fa-bug" : issue.labels[0] === "enhancement" ? "fa-wand-magic-sparkles" : "fa-book"}"></i>
                                 ${issue.labels[0].toUpperCase()}
                             </div>
                             <div
-                                class="min-w-28 p-1 bg-orange-200 flex gap-1 justify-center text-[10px] text-orange-500 font-medium items-center rounded-full border-2 border-orange-300">
+                                class="p-1 px-2 bg-orange-200 flex gap-1 justify-center text-[10px] text-orange-500 font-medium items-center rounded-full border-2 border-orange-300">
                                 ${issue.labels[1]?.toUpperCase() || ""}
                             </div >
                         </div >
