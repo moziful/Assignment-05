@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 
-<body class="font-['Geist'] w-full min-h-screen bg-gray-100">
+<body class="relative font-['Geist'] w-full min-h-screen bg-gray-100">
     <!-- Navigation Bar -->
     <header>
         <nav class="bg-white w-full px-4 lg:px-20 xl:px-30 py-4 gap-2 flex flex-col sm:flex-row justify-between">
@@ -38,7 +38,7 @@
             </div>
         </nav>
     </header>
-    <main class="px-4 py-2 sm:px-6 md:px-10 lg:px-25 xl:px-60 sm:py-10 md:py-10 lg:py-15 flex flex-col">
+    <main class="px-4 py-2 sm:px-6 md:px-10 lg:px-25 xl:px-48 sm:py-10 md:py-10 lg:py-15 flex flex-col">
         <!-- Catagory -->
         <div class="p-2 sm:p-6 gap-2 flex bg-white rounded-md mb-2 sm:mb-4">
             <button id="allCatagoryButton"
@@ -79,134 +79,9 @@
             </div>
         </div>
         <!-- Cards Container-->
-        <div class="p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 bg-white rounded-md rounded-t-none">
-            <!-- Single Card -->
-            <div class="border-t-4 border-green-500 w-full shadow-lg rounded-md">
-                <div class="p-3 bg-white w-full shadow rounded-t-sm">
-                    <!-- Details -->
-                    <div class="flex flex-col gap-3">
-                        <!-- Status + Priority -->
-                        <div class="flex justify-between">
-                            <img class="w-6 h-6" src="./assets/Open-Status.png" alt="">
-                            <div
-                                class="w-20 bg-red-200 flex justify-center text-xs text-red-500 font-medium items-center rounded-full">
-                                HIGH
-                            </div>
-                        </div>
-                        <div class="flex flex-col gap-3">
-                            <div class="flex flex-col gap-2">
-                                <p class="font-semibold text-sm">Fix navigation menu on mobile devices</p>
-                                <p class="text-xs">The navigation menu doesn't collapse properly on mobile devices...
-                                </p>
-                            </div>
-                            <div class="flex gap-1">
-                                <div
-                                    class="w-14 p-1 bg-red-200 flex gap-1 justify-center text-xs text-red-500 font-medium items-center rounded-full border-2 border-red-300">
-                                    <i class="fa-solid fa-bug"></i>
-                                    BUG
-                                </div>
-                                <div
-                                    class="w-28 p-1 bg-orange-200 flex gap-1 justify-center text-xs text-orange-500 font-medium items-center rounded-full border-2 border-orange-300">
-                                    <i class="fa-solid fa-bug"></i>
-                                    HELP WANTED
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Authore -->
-                <div class="p-3 bg-white w-full rounded-b-sm border-t-2 border-gray-200">
-                    <div class="text-gray text-xs flex flex-col gap-1">
-                        <p>#1 by John Doe</p>
-                        <p>1/15/2024</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Single Card -->
-            <div class="border-t-4 border-green-500 w-full shadow-lg rounded-md">
-                <div class="p-3 bg-white w-full shadow rounded-t-sm">
-                    <!-- Details -->
-                    <div class="flex flex-col gap-3">
-                        <!-- Status + Priority -->
-                        <div class="flex justify-between">
-                            <img class="w-6 h-6" src="./assets/Open-Status.png" alt="">
-                            <div
-                                class="w-20 bg-red-200 flex justify-center text-xs text-red-500 font-medium items-center rounded-full">
-                                HIGH
-                            </div>
-                        </div>
-                        <div class="flex flex-col gap-3">
-                            <div class="flex flex-col gap-2">
-                                <p class="font-semibold text-sm">Fix navigation menu on mobile devices</p>
-                                <p class="text-xs">The navigation menu doesn't collapse properly on mobile devices...
-                                </p>
-                            </div>
-                            <div class="flex gap-1">
-                                <div
-                                    class="w-14 p-1 bg-red-200 flex gap-1 justify-center text-xs text-red-500 font-medium items-center rounded-full border-2 border-red-300">
-                                    <i class="fa-solid fa-bug"></i>
-                                    BUG
-                                </div>
-                                <div
-                                    class="w-28 p-1 bg-orange-200 flex gap-1 justify-center text-xs text-orange-500 font-medium items-center rounded-full border-2 border-orange-300">
-                                    <i class="fa-solid fa-bug"></i>
-                                    HELP WANTED
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Authore -->
-                <div class="p-3 bg-white w-full rounded-b-sm border-t-2 border-gray-200">
-                    <div class="text-gray text-xs flex flex-col gap-1">
-                        <p>#1 by John Doe</p>
-                        <p>1/15/2024</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Single Card -->
-            <div class="border-t-4 border-green-500 w-full shadow-lg rounded-md">
-                <div class="p-3 bg-white w-full shadow rounded-t-sm">
-                    <!-- Details -->
-                    <div class="flex flex-col gap-3">
-                        <!-- Status + Priority -->
-                        <div class="flex justify-between">
-                            <img class="w-6 h-6" src="./assets/Open-Status.png" alt="">
-                            <div
-                                class="w-20 bg-red-200 flex justify-center text-xs text-red-500 font-medium items-center rounded-full">
-                                HIGH
-                            </div>
-                        </div>
-                        <div class="flex flex-col gap-3">
-                            <div class="flex flex-col gap-2">
-                                <p class="font-semibold text-sm">Fix navigation menu on mobile devices</p>
-                                <p class="text-xs">The navigation menu doesn't collapse properly on mobile devices...
-                                </p>
-                            </div>
-                            <div class="flex gap-1">
-                                <div
-                                    class="w-14 p-1 bg-red-200 flex gap-1 justify-center text-xs text-red-500 font-medium items-center rounded-full border-2 border-red-300">
-                                    <i class="fa-solid fa-bug"></i>
-                                    BUG
-                                </div>
-                                <div
-                                    class="w-28 p-1 bg-orange-200 flex gap-1 justify-center text-xs text-orange-500 font-medium items-center rounded-full border-2 border-orange-300">
-                                    <i class="fa-solid fa-bug"></i>
-                                    HELP WANTED
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Authore -->
-                <div class="p-3 bg-white w-full rounded-b-sm border-t-2 border-gray-200">
-                    <div class="text-gray text-xs flex flex-col gap-1">
-                        <p>#1 by John Doe</p>
-                        <p>1/15/2024</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Single Card -->
+        <div id="issuesContainer"
+            class="p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 bg-white rounded-md rounded-t-none">
+            <!-- Card -->
             <div class="border-t-4 border-green-500 w-full shadow-lg rounded-md">
                 <div class="p-3 bg-white w-full shadow rounded-t-sm">
                     <!-- Details -->
@@ -252,6 +127,13 @@
     </main>
 
 
+
+    <!-- 
+Parent div niye oita full screen, oitar reference e eita center
+    <div
+        class="top-10 left-10 absolute w-3/4 h-150 z-100 border-2 bg-blue-300 mx-auto rounded-lg flex flex-col justify-center items-center gap-4">
+
+    </div> -->
     <script src="./issues.js"></script>
 </body>
 
