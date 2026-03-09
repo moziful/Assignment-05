@@ -82,7 +82,7 @@
         <div id="issuesContainer"
             class="p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 bg-white rounded-md rounded-t-none">
             <!-- Card -->
-            <div class="border-t-4 border-green-500 w-full shadow-lg rounded-md">
+            <div id="issueCard" class="border-t-4 border-green-500 w-full shadow-lg rounded-md">
                 <div class="p-3 bg-white w-full shadow rounded-t-sm">
                     <!-- Details -->
                     <div class="flex flex-col gap-3">
@@ -126,26 +126,23 @@
         </div>
     </main>
 
+    <!-- Open the modal using ID.showModal() method -->
+    <!-- <button class="btn" onclick="">open modal</button> -->
 
-
-
-    <div class="top-0 left-0 absolute w-full h-screen z-100 bg-[#00000080] flex flex-col justify-center items-center">
-        <div class="p-8 w-120 md:w-175 h-102 bg-white rounded-md flex justify-center items-center">
-            <div class="flex flex-col gap-4">
-                <p id="modalTitle" class="text-lg font-semibold"></p>
-                <p id="modalDescription"></p>
-                <p id="modalAuthor"></p>
-                <p id="modalAssignee"></p>
-                <p id="modalCreatedAt"></p>
-                <p id="modalStatus"></p>
-                <p id="modalPriority"></p>
-                <p id="modalLabels"></p>
+    <dialog id="my_modal_1" class="modal">
+        <div class="modal-box">
+            <h3 class="text-lg font-bold">Hello!</h3>
+            <p class="py-4">Press ESC key or click the button below to close</p>
+            <div class="modal-action">
+                <form method="dialog">
+                    <!-- if there is a button in form, it will close the modal -->
+                    <button class="btn">Close</button>
+                </form>
             </div>
         </div>
+    </dialog>
 
-    </div>
     <script src="./issues.js"></script>
-    <script src="./modal.js"></script>
 </body>
 
 </html>
